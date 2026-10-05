@@ -1,0 +1,65 @@
+{% extends 'contactos/base.html' %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-md-8">
+        <form method="get" class="row g-2">
+            <div class="col-auto">
+                <input type="text" name="q" class="form-control" placeholder="Buscar por nombre, email..." value="{{ query }}">
+            </div>
+            <div class="col-auto">
+                <select name="provincia" class="form-select">
+                    <option value="">-- Todas las provincias --</option>
+                    {% for p in provincias %}
+                        <option value="{{ p.id }}" {% if provincia_seleccionada == p.id|stringformat:"i" %}selected{% endif %}>
+                            {{ p.nombre }}
+                        </option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary">Buscar</button>
+            </div>
+        </form>
+    </div>
+    
+    {% if user.is_authenticated %}
+    <div class="col-md-4 text-end">
+        <a href="{% url 'nuevo' %}" class="btn btn-success">+ Nuevo Contacto</a>
+    </div>
+    {% endif %}
+</div>
+
+<table class="table table-striped align-middle">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Teléfono</th>
+            <th>Email</th>
+            <th>Provincia</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for contacto in contactos %}
+        <tr>
+            <td><a href="{% url 'ficha' contacto.id %}" class="fw-bold text-decoration-none">{{ contacto.nombre }}</a></td>
+            <td>{{ contacto.telefono }}</td>
+            <td>{{ contacto.email }}</td>
+            <td>{{ contacto.provincia|default:"-" }}</td>
+            <td>
+                <a href="{% url 'ficha' contacto.id %}" class="btn btn-sm btn-info text-white">Ver</a>
+                {% if user.is_authenticated %}
+                    <a href="{% url 'editar' contacto.id %}" class="btn btn-sm btn-warning">Editar</a>
+                    <a href="{% url 'eliminar' contacto.id %}" class="btn btn-sm btn-danger">Borrar</a>
+                {% endif %}
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="5" class="text-center text-muted">No se encontraron contactos.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'contactos/base.html' %}
+
+{% block content %}
+<a href="{% url 'inicio' %}" class="btn btn-outline-secondary mb-3">&larr; Volver</a>
+<div class="card shadow-sm col-md-6 mx-auto">
+    <div class="card-body">
+        <h2 class="card-title">{{ contacto.nombre }}</h2>
+        <hr>
+        <p><strong>Teléfono:</strong> {{ contacto.telefono }}</p>
+        <p><strong>Email:</strong> {{ contacto.email }}</p>
+        <p><strong>Provincia:</strong> {{ contacto.provincia|default:"No asignada" }}</p>
+        
+        {% if contacto.foto %}
+            <div class="my-3">
+                <img src="{{ contacto.foto.url }}" class="img-fluid rounded" style="max-height: 250px;">
+            </div>
+        {% endif %}
+
+        {% if user.is_authenticated %}
+            <div class="mt-4">
+                <a href="{% url 'editar' contacto.id %}" class="btn btn-warning">Editar</a>
+                <a href="{% url 'eliminar' contacto.id %}" class="btn btn-danger">Borrar</a>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
