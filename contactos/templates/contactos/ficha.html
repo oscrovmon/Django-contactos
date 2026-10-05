@@ -9,6 +9,7 @@
         <p><strong>Teléfono:</strong> {{ contacto.telefono }}</p>
         <p><strong>Email:</strong> {{ contacto.email }}</p>
         <p><strong>Provincia:</strong> {{ contacto.provincia|default:"No asignada" }}</p>
+        <p><strong>Pais:</strong> {{ contacto.pais|default:"No asignado" }}</p>
         
         {% if contacto.foto %}
             <div class="my-3">

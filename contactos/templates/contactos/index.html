@@ -37,6 +37,7 @@
             <th>Teléfono</th>
             <th>Email</th>
             <th>Provincia</th>
+            <th>Pais</th>
             <th>Acciones</th>
         </tr>
     </thead>
@@ -47,6 +48,7 @@
             <td>{{ contacto.telefono }}</td>
             <td>{{ contacto.email }}</td>
             <td>{{ contacto.provincia|default:"-" }}</td>
+            <td>{{ contacto.pais|default:"-" }}</td>
             <td>
                 <a href="{% url 'ficha' contacto.id %}" class="btn btn-sm btn-info text-white">Ver</a>
                 {% if user.is_authenticated %}
