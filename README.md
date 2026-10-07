@@ -1,55 +1,14 @@
-# 📇 Agenda de Contactos — Guía de Evaluación y Funcionalidades
+# Como funciona Django
 
-Este proyecto es una aplicación web de **Agenda de Contactos** desarrollada con **Python y Django 6.1.1**, utilizando **SQLite** como base de datos y **Bootstrap 5** para la interfaz de usuario. A continuación se detallan las instrucciones para acceder al panel de administración y el resumen de funcionalidades implementadas.
+Django es un framework de desarrollo web creado con Python que permite crear páginas y aplicaciones web de una forma más rápida, organizada y segura. Proporciona una estructura ya preparada con diferentes herramientas para evitar tener que programar desde cero muchas de las funciones habituales de una aplicación web.
 
-## 🔑 1. Acceso al Panel de Administración
+Su funcionamiento se basa en recibir las peticiones que realizan los usuarios desde el navegador, procesarlas y devolver una respuesta. Django organiza este proceso mediante diferentes partes, como las URL, las vistas, los modelos y las plantillas. Las URL determinan qué parte de la aplicación debe ejecutarse, las vistas contienen la lógica que procesa las peticiones, los modelos permiten trabajar con la base de datos y las plantillas se encargan de mostrar la información al usuario.
 
-1. **Iniciar el servidor local**:
-   
-   ```bash
-   python manage.py runserver
+Además, Django incluye herramientas para gestionar usuarios, formularios, sesiones y bases de datos, entre otras funciones. Todo esto permite desarrollar aplicaciones web de manera estructurada y facilita su mantenimiento y ampliación.
 
-2. Abre el navegador y ves a la siguiente URL: [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/)
+En resumen, Django es una herramienta que proporciona una estructura completa para desarrollar aplicaciones web, encargándose de organizar la comunicación entre el usuario, la lógica de la aplicación, la interfaz y la base de datos.
 
-## 🚀 2. Funcionalidades de la Aplicación Web
-
-Credenciales de acceso (para acceder a todas las funcionalidades como administrador).
-
-Ir a iniciar sesión y introducir:
-
-**Usuario:** Oscar
-
-**Contraseña:** (admin123)
-
-👤 **Gestión de Contactos** (CRUD)
-
-Listado General: Vista principal con tabla limpia e intuitiva que muestra todos los contactos registrados junto con su provincia e imagen (si esta insertada) asociada.
-
-Creación de Contactos (/contacto/nuevo/): Formulario para añadir nuevos contactos incluyendo campos como Nombre, Teléfono, Email, Provincia (desplegable) e Imagen de perfil.
-
-Edición de Contactos: Permite modificar la información existente de cualquier contacto registrado.
-
-Ficha de Detalle: Vista individual con la información completa de cada contacto y su foto.
-
-Eliminación Segura: Confirmación previa antes de eliminar un registro para evitar borrados accidentales.
-
-🔍 **Buscador y Filtros**
-
-Búsqueda por texto: Permite buscar contactos en tiempo real por Nombre, Email o Teléfono.
-
-Filtrado por Provincia: Desplegable interactivo para filtrar el listado según la provincia asociada (Castellón, Valencia, Alicante).
-
-📁 **Gestión de Archivos e Imágenes**
-
-Manejo dinámico de archivos mediante MEDIA_ROOT y MEDIA_URL con Pillow, permitiendo la subida y visualización directa de las imágenes de perfil de cada contacto.
-
-🛡️ **Autenticación y Seguridad**
-
-Sistema de Autenticación Integrado: Control de acceso que muestra el estado de sesión activo ("Hola, Oscar").
-
-Cerrar Sesión Seguro (POST): Botón de Logout adaptado a las especificaciones de seguridad de Django que procesa la desconexión mediante peticiones POST cifradas con CSRF token.
-
-   **Conversación con la IA**
+## Conversación con la IA
 
 Este es el link para revisar la conversación que tuve con la IA para crear la página web:
 
