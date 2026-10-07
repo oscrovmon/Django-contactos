@@ -13,11 +13,13 @@ Este proyecto es una aplicación web de **Agenda de Contactos** desarrollada con
 
 ## 🚀 2. Funcionalidades de la Aplicación Web
 
-Credenciales de acceso (para acceder a todas las funcionalidades como administrador):
+Credenciales de acceso (para acceder a todas las funcionalidades como administrador).
 
-        Usuario: Oscar
+Ir a iniciar sesión y introducir:
 
-        Contraseña: (admin123)
+**Usuario:** Oscar
+
+**Contraseña:** (admin123)
 
 👤 **Gestión de Contactos** (CRUD)
 
