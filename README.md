@@ -7,7 +7,7 @@ Este proyecto es una aplicación web de **Agenda de Contactos** desarrollada con
 1. **Iniciar el servidor local**:
    
    ```bash
-   python manage.py runserver```
+   python manage.py runserver
 
 2. Abre el navegador y ves a la siguiente URL: [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/)
 
